@@ -1,4 +1,16 @@
 ## Android Root版SDK
+
+### 使用方法：
+
+```
+将aar包放入项目libs里面
+
+在build.gradle中加入如下引用
+// 需要第三方 Gson 与 OkHttp 库， 我这配置的是这个
+implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+implementation (name:'stproxy-release', ext:'aar')
+```
+
 ### 类： ST
 #### 方法：
 ```
@@ -89,6 +101,16 @@ void onAreasResp(int code, String json);
 - 1	账号名/密码错误
 - 2	其它错误
 
+```
+{
+	"usageCount": 100,  // 总连接数
+	"usingCount": 0,    // 已用连接数
+	"username": "zzz123",
+	"dateOfflineForClient": 1637055038000  //账号到期时间
+}
+```
+
+
 #### 切换ip：
 - 1	获取ip失败
 - 2	账号已过期
@@ -96,3 +118,22 @@ void onAreasResp(int code, String json);
 - 5	切换ip太快，至少11秒以上（针对独享）
 - 6	超出用量
 - 7	无可用ip
+
+#### 获取地区：
+```
+ {
+		"id": 10,   // 代表省份id
+		"isEnable": 1,  // 0不可用 1 代表可用， 2 维护中 
+		"versionMark": 5,
+		"cities": [{
+			"id": 122,      // 城市id， changeid时的参数就是这个
+			"isEnable": 1,
+			"versionMark": 1,
+			"lineNum": 412,
+			"cname": "泰州电信",
+			"pid": 10
+		}],
+		"pname": "江苏"
+}
+
+```
