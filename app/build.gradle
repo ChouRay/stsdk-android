@@ -36,5 +36,5 @@ dependencies {
 
     // 由于库中用到了 Gson 与 OkHttp，所以需要引用这两个库
     implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
-    implementation (name:'stproxy-release', ext:'aar')
+    implementation (name:'stproxy-release1.0', ext:'aar')
 }
