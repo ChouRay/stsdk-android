@@ -34,7 +34,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
-    // 由于库中用到了 Gson 与 OkHttp，所以需要引用这两个库
+    // 建议最好修改下版本名称，避免用到缓存的aar包
+    implementation (name:'stproxy-release1.1', ext:'aar')
+    // 需要第三方 Gson 与 OkHttp 库， 我这配置的是这个
     implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
-    implementation (name:'stproxy-release1.0', ext:'aar')
 }
