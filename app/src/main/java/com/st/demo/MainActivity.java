@@ -117,4 +117,15 @@ public class MainActivity extends AppCompatActivity implements STListener {
     public void onAreasResp(int code, String json) {
         Log.e("TAG", "code=" + code + ", areas=" + json);
     }
+
+    @Override
+    public void onIPStatusListener(final int code, final String msg) {
+        Log.e("TAG", "code=" + code + ", msg=" + msg);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                tv_link_status.setText(""+code + "," + msg);
+            }
+        });
+    }
 }

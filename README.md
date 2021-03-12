@@ -57,7 +57,7 @@ void stopip();
 
 /**
  * 获取地区
- * 用户登录后才能知道是，普通还是独享的地区
+ * 注意: 需要登录后才能调用
  */
 void getAreas();
 ```
@@ -93,6 +93,15 @@ void getAreas();
  * @param json 地区列表
  */
 void onAreasResp(int code, String json);
+
+/**
+* ip连接状态监听
+* 注意： 这是非UI线程回调
+* @param code 返回码
+* @param msg  返回消息
+*/
+void onIPStatusListener(int code, String msg);
+
 ```
 
 ### code返回码：
@@ -108,7 +117,7 @@ void onAreasResp(int code, String json);
 {
 	"usageCount": 100,  // 总连接数
 	"usingCount": 0,    // 已用连接数
-	"username": "zzz123",
+	"username": "ttt123",   //登录账号
 	"dateOfflineForClient": 1637055038000  //账号到期时间
 }
 ```
@@ -138,5 +147,9 @@ void onAreasResp(int code, String json);
 		}],
 		"pname": "江苏"
 }
+
+#### ip连接监听状态码
+- 1 ip连接断开，已断网
+- 2 账号到期，已断网
 
 ```
