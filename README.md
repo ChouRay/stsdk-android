@@ -148,7 +148,7 @@ void onIPStatusListener(int code, String msg);
 		"pname": "江苏"
 }
 
-#### ip连接监听状态码
+#### IP连接状态监听：
 - 1 ip连接断开，已断网
 - 2 账号到期，已断网
 
