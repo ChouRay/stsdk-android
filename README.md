@@ -58,8 +58,9 @@ void stopip();
 /**
  * 获取地区
  * 注意: 需要登录后才能调用
+ * @param isFilter 是否过滤无效地区或维护中的地区
  */
-void getAreas();
+void getAreas(bool isFilter);
 ```
 
 
@@ -139,11 +140,11 @@ void onIPStatusListener(int code, String msg);
 		"versionMark": 5,
 		"cities": [{
 			"id": 122,      // 城市id， changeid时的参数就是这个
-			"isEnable": 1,
-			"versionMark": 1,
-			"lineNum": 412,
+			"isEnable": 1,      // 0不可用 1 代表可用， 2 维护中
+			"versionMark": 1,   // 无关变量不用管
+			"lineNum": 412,     // 线路条数
 			"cname": "泰州电信",
-			"pid": 10
+			"pid": 10           // 代表省份id
 		}],
 		"pname": "江苏"
 }

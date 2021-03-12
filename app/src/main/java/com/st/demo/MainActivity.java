@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements STListener {
         Log.e("TAG", "onSTLogined code=" + code + ", json:" + json);
         if(code ==0 ){
             tv_link_status.setText("登录成功");
-            ST.getAreas();
+            ST.getAreas(true);
         } else if (code == 1) {
             tv_link_status.setText("账号密码错误");
         }

@@ -35,7 +35,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
     // 建议最好修改下版本名称，避免用到缓存的aar包
-    implementation (name:'stproxy-release1.3', ext:'aar')
+    implementation (name:'stproxy-release1.4', ext:'aar')
     // 需要第三方 Gson 与 OkHttp 库， 我这配置的是这个
     implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
 }
