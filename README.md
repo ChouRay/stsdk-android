@@ -1,6 +1,7 @@
-## Autojs 实现的SDK Demo
+## [Android Root版本SDKautojs实现）](https://github.com/ChouRay/stsdk-android/tree/main/autojs)
 
-## Android Root版SDK
+
+## Android Root版SDK(java实现)
 
 ### 使用方法：
 
