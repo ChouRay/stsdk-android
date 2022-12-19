@@ -1,7 +1,7 @@
-## [Android Root版本SDK(autojs实现)](https://github.com/ChouRay/stsdk-android/tree/main/autojs)
+## [Android Root版本SDK(autojs接入)](https://github.com/ChouRay/stsdk-android/tree/main/autojs)
 
 
-## Android Root版SDK(java实现)
+## Android Root版SDK(java接入文档)
 
 ### 使用方法：
 
