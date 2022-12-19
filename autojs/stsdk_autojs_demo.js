@@ -23,14 +23,6 @@ filter.addAction("recive.st.onIPStatusListener");
         <text id="text1"></text>
         <text id="text2"></text>
         <text id="text3"></text>   
-        <frame>
-            <list id="list">
-                <vertical>
-                    <text id="name" textSize="16sp" textColor="#000000" text="姓名: {{name}}"/>
-                    <text id="age" textSize="16sp" textColor="#000000" text="年龄: {{age}}岁"/>
-                </vertical>
-            </list>
-        </frame>
 
 
      </vertical>      
