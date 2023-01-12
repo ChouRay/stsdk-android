@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements STListener {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
+        // 不用了必须释放IP
         ST.releaseip();
     }
 
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements STListener {
     }
 
     public void onBtnLogin(View v){
-        String your_st_account = "zzz123";
+        String your_st_account = "ttt123";
         String your_st_password = "123123";
         ST.login(your_st_account, your_st_password);
     }

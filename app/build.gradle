@@ -7,8 +7,8 @@ android {
         applicationId "com.st.demo"
         minSdkVersion 15
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -16,6 +16,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -36,6 +41,7 @@ dependencies {
 
     // 建议最好修改下版本名称，避免用到缓存的aar包
     implementation (name:'stproxy-release2.4', ext:'aar')
-    // 需要第三方 Gson 与 OkHttp 库， 我这配置的是这个
-    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    // 需要第三方 Gson 与 OkHttp 库
+    implementation("com.squareup.okhttp3:okhttp:3.14.9")
+    implementation 'com.google.code.gson:gson:2.4'
 }

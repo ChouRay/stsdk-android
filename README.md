@@ -22,8 +22,9 @@ adb shell am broadcast -a action.st.releaseip
 // 建议最好修改下版本名称，避免用到缓存的aar包
 implementation (name:'stproxy-release1.x', ext:'aar')
 
-// 需要第三方 Gson 与 OkHttp 库， 我这配置的是这个
-implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+// 需要第三方 Gson 与 OkHttp 库
+implementation("com.squareup.okhttp3:okhttp:3.14.9")
+implementation 'com.google.code.gson:gson:2.4'
 
 ```
 
