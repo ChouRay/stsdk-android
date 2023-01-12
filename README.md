@@ -1,6 +1,6 @@
-## [Android Root版本SDK(广播版接入)](https://github.com/ChouRay/stsdk-android/tree/main/autojs)
+## [Android Root版本SDK(广播版接入)](https://github.com/ChouRay/stsdk-android/tree/main/%E5%B9%BF%E6%92%AD%E7%89%88SDK)
 通过发送广播的方式来操作SDK，切换ip的功能
-- 可以通过autojs代码接入
+- [可以通过autojs代码接入](https://github.com/ChouRay/stsdk-android/blob/main/%E5%B9%BF%E6%92%AD%E7%89%88SDK/stsdk_autojs_demo.js)
 - 可以通过adb命令直接接入
 ```
 // 登录
