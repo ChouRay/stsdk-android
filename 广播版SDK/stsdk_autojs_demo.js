@@ -5,13 +5,12 @@ intent = new Intent();
 importClass(android.content.ContextWrapper); 
 importClass(android.content.IntentFilter);
 filter = new IntentFilter(); 
-filter.addAction("receive.st.onSTLogined");
-filter.addAction("receive.st.onIPChanged"); 
-filter.addAction("receive.st.onSTRelease");
-filter.addAction("recive.st.onAreasResp");
-filter.addAction("recive.st.onIPStatusListener");
-filter.addAction("receive.st.selectedCities");
-filter.addAction("receive.st.fixedIpInfo");
+filter.addAction("receive.st.onSTLogined"); // 返回登录结果
+filter.addAction("receive.st.onIPChanged"); // 切换ip返回
+filter.addAction("receive.st.onSTRelease");// 释放IP 
+filter.addAction("recive.st.onIPStatusListener");// ip运行状态
+filter.addAction("receive.st.selectedCities");// 获取已选择的地区的id数据，中间逗号隔开
+filter.addAction("receive.st.fixedIpInfo");// 获取固定ip相对应的id信息， 仅普通版有效
  
  ui.layout( 
      <vertical>
@@ -37,7 +36,7 @@ filter.addAction("receive.st.fixedIpInfo");
             new ContextWrapper(context).registerReceiver(receiver=new android.content.BroadcastReceiver({        
                 onReceive: function(context, intent) {                   
                     switch(intent.getAction()) {
-                        case "receive.st.onSTLogined":  // 返回登录结果
+                        case "receive.st.onSTLogined": 
                             code = intent.getIntExtra("code", -1);                     
                             if (code == 0) {
                                 username = intent.getStringExtra("username");
@@ -65,7 +64,7 @@ filter.addAction("receive.st.fixedIpInfo");
                             });
 
                             break;
-                        case "receive.st.onIPChanged":  // 切换ip返回
+                        case "receive.st.onIPChanged":  
                             code = intent.getIntExtra("code", -1); 
                             if(code ==0 ){
                                 ip = intent.getStringExtra("ip");
@@ -97,23 +96,23 @@ filter.addAction("receive.st.fixedIpInfo");
     
                             //checkIP(); // 可以检测下外网IP是否已改成功
                             break;
-                        case "receive.st.onSTRelease":      // 释放IP
+                        case "receive.st.onSTRelease":
                             //toastLog("IP已释放"); 
                             ui.text1.setText("已释放,请重新登录");
                             ui.text2.setText("");
                             ui.text3.setText("");
                             unRegisterBroadcast();  // 注销广播
                             break;
-                        case "receive.st.onIPStatusListener":   // ip运行状态
+                        case "receive.st.onIPStatusListener":
                             code = intent.getIntExtra("code", 0); 
                             msg = intent.getStringExtra("msg");
     
                             break;
-                        case "receive.st.selectedCities":   // 获取已选择的地区id
+                        case "receive.st.selectedCities":   
                             msg = intent.getStringExtra("citiesId");
                             ui.text4.setText("已选地区ID："+msg);
                             break;
-                        case "receive.st.fixedIpInfo":      // 获取固定ip相对应的id信息
+                        case "receive.st.fixedIpInfo":      
                             hostId = intent.getIntExtra("hostId", 0);
                             lineId = intent.getIntExtra("lineId", 0);
                             ui.text5.setText("hostId："+hostId + ",lineId:" + lineId);
