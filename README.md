@@ -4,11 +4,11 @@
 - 可以通过adb命令直接接入
 ```
 // 登录
-adb shell am broadcast -a action.st.login --es username 你的账号 --es password 你的密码
+adb shell am broadcast -f 0x01000000 -a action.st.login --es username 你的账号 --es password 你的密码
 // 切换ip
-adb shell am broadcast -a action.st.changeip
+adb shell am broadcast -f 0x01000000 -a action.st.changeip
 // 释放IP（不用了必须释放，否则下次登录会卡5分种连接数）
-adb shell am broadcast -a action.st.releaseip
+adb shell am broadcast -f 0x01000000 -a action.st.releaseip
 ```
 
 ## Android Root版SDK(java接入文档)
