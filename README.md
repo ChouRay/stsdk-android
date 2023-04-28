@@ -10,6 +10,7 @@ adb shell am broadcast -f 0x01000000 -a action.st.changeip
 // 释放IP（不用了必须释放，否则下次登录会卡5分种连接数）
 adb shell am broadcast -f 0x01000000 -a action.st.releaseip
 ```
+### 以上方式皆需要下载安装sdk的apk包[点击下载](https://android-1302225453.cos.ap-guangzhou.myqcloud.com/wzb/ST%E5%8A%A0%E9%80%9F%E5%99%A8SDK1.4.apk)
 
 ## Android Root版SDK(java接入文档)
 
