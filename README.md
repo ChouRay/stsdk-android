@@ -33,7 +33,7 @@ http://127.0.0.1:8083/login?username=你的账号名&password=你的密码
 ### 切换ip
 **默认url：http://127.0.0.1:8083/changeip**
 <br>
-**完整url： http://127.0.0.1:8083/changeip?areas=[你选择的城市id]&lineId=[获取到的lineId]&hostId=[获取都得hostId]**
+**完整url： http://127.0.0.1:8083/changeip?areas=[你选择的城市id]&lineId=[lineId]&hostId=[hostId]**
 >参数说明： 
 >>areas, 城市id，多个中间用逗号分隔，如： 512,352，521
 >>hostId, lineId 切换ip会返回，用于普通版固定ip
@@ -103,7 +103,10 @@ http://127.0.0.1:8083/login?username=你的账号名&password=你的密码
 ```
 
 
-### 以上方式皆需要下载安装sdk的apk包[点击下载](https://android-1302225453.cos.ap-guangzhou.myqcloud.com/wzb/ST%E5%8A%A0%E9%80%9F%E5%99%A8SDK1.4.apk)
+### 以上方式皆需要下载安装sdk的apk包[点击下载](https://android-1302225453.cos.ap-guangzhou.myqcloud.com/wzb/ST%E5%8A%A0%E9%80%9F%E5%99%A8SDK1.6.apk)
+
+<br>
+<br>
 
 ## Android Root版SDK(java接入文档)
 
