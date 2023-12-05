@@ -111,7 +111,7 @@ adb shell am broadcast -f 0x01000000 -a action.st.releaseip
 ```
 
 
-### 以上方式皆需要下载安装sdk的apk包[点击下载](https://android-1302225453.cos.ap-guangzhou.myqcloud.com/ST%E5%8A%A0%E9%80%9F%E5%99%A8SDK1.7.apk)
+### 以上方式皆需要下载安装sdk的apk包[点击下载](https://android-1302225453.cos.ap-guangzhou.myqcloud.com/ST%E5%8A%A0%E9%80%9F%E5%99%A8SDK1.8.apk)
 
 <br>
 <br>
