@@ -12,10 +12,10 @@ adb shell am broadcast -f 0x01000000 -a action.st.releaseip
 ```
 
 ## [Android Root版本SDK(Api接入)](https://github.com/ChouRay/stsdk-android/tree/main/SDK-App)
-### 登录
+#### 登录
+> http://127.0.0.1:8083/login?username=你的账号名&password=你的密码
 
 ```
-http://127.0.0.1:8083/login?username=你的账号名&password=你的密码
 返回
 {
 	"code": 200,			
@@ -31,14 +31,17 @@ http://127.0.0.1:8083/login?username=你的账号名&password=你的密码
 
 ```
 
-### 切换ip
-```
-默认url：http://127.0.0.1:8083/changeip
+#### 切换ip
+
+> 默认url：http://127.0.0.1:8083/changeip
 <br>
-完整url： http://127.0.0.1:8083/changeip?areas=[你选择的城市id]&lineId=[lineId]&hostId=[hostId]
->参数说明： 
->>areas, 城市id，多个中间用逗号分隔，如： 512,352，521
->>hostId, lineId 切换ip会返回，用于普通版固定ip
+
+> 完整url： http://127.0.0.1:8083/changeip?areas=[你选择的城市id]&lineId=[lineId]&hostId=[hostId]
+> 参数说明： 
+>> areas, 城市id，多个中间用逗号分隔，如： 512,352，521
+>> hostId, lineId 切换ip会返回，用于普通版固定ip
+
+```
 返回
 {
     "code":200            
@@ -57,10 +60,11 @@ http://127.0.0.1:8083/login?username=你的账号名&password=你的密码
     500服务器错误
 ```
 
-### 释放ip（退出时必须调用，以免连接数被占用）
+#### 释放ip（退出时必须调用，以免连接数被占用）
+
+>http://127.0.0.1:8083/releaseip
 
 ```
-http://127.0.0.1:8083/releaseip
 返回
 {
 	"code": 200,
@@ -70,10 +74,11 @@ http://127.0.0.1:8083/releaseip
 ```
 
 
-### 停止代理IP(用于停止代理走本地，但不退出软件)
+#### 停止代理IP(用于停止代理走本地，但不退出软件)
+
+> http://127.0.0.1:8083\stopip
 
 ```
-http://127.0.0.1:8083\stopip
 返回
 {
 	"code": 200,
@@ -81,10 +86,10 @@ http://127.0.0.1:8083\stopip
 }
 ```
 
-### 获取所有地区列表
+#### 获取所有地区列表
+> http://127.0.0.1:8083/getareas
 
 ```
-http://127.0.0.1:8083/getareas
 返回
 {
 	"code":200,
