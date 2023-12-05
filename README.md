@@ -32,6 +32,7 @@ http://127.0.0.1:8083/login?username=你的账号名&password=你的密码
 
 ### 切换ip
 **默认url：http://127.0.0.1:8083/changeip**
+<br>
 **完整url： http://127.0.0.1:8083/changeip?areas=[你选择的城市id]&lineId=[获取到的lineId]&hostId=[获取都得hostId]**
 >参数说明： 
 >>areas, 城市id，多个中间用逗号分隔，如： 512,352，521
@@ -68,7 +69,7 @@ http://127.0.0.1:8083/login?username=你的账号名&password=你的密码
 ```
 
 
-### 停止(用于停止代理走本地，但不退出软件)
+### 停止代理IP(用于停止代理走本地，但不退出软件)
 **http://127.0.0.1:8083\stopip**
 ```
 返回
