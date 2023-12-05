@@ -47,7 +47,7 @@ adb shell am broadcast -f 0x01000000 -a action.st.releaseip
 {
     "code":200            
     "ipName": "浙江-台州电信",
-    "addr": "183.149.124.17",                              
+    "addr": "183.149.124.17",
 	"hostId": 12,	// 普通版固定IP时 请求参数 &hostId=
 	"lineId": 32131, // 普通版固定IP时 请求参数 &lineId=
     "usageCount": 18,
