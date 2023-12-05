@@ -1,6 +1,6 @@
-## [Android Root版本SDK(广播版接入)](https://github.com/ChouRay/stsdk-android/tree/main/%E5%B9%BF%E6%92%AD%E7%89%88SDK)
+## [Android Root版本SDK(广播版接入)](https://github.com/ChouRay/stsdk-android/tree/main/SDK-App)
 通过发送广播的方式来操作SDK，切换ip的功能
-- [可以通过autojs代码接入](https://github.com/ChouRay/stsdk-android/blob/main/%E5%B9%BF%E6%92%AD%E7%89%88SDK/stsdk_autojs_demo.js)
+- [可以通过autojs代码接入](https://github.com/ChouRay/stsdk-android/blob/main/SDK-App/stsdk_autojs_demo.js)
 - 可以通过adb命令直接接入
 ```
 // 登录
@@ -10,6 +10,98 @@ adb shell am broadcast -f 0x01000000 -a action.st.changeip
 // 释放IP（不用了必须释放，否则下次登录会卡5分种连接数）
 adb shell am broadcast -f 0x01000000 -a action.st.releaseip
 ```
+
+## [Android Root版本SDK(Api接入)](https://github.com/ChouRay/stsdk-android/tree/main/SDK-App)
+### 登录
+http://127.0.0.1:8083/login?username=你的账号名&password=你的密码
+```
+返回
+{
+	"code": 200,			
+	"data": {
+		"version": 3,	// 1 普通 2 专享 3 独享
+		"usageCount": 18,	// 连接数 总数
+		"usingCount": 0,	// 当前用量		
+		"username": "xxxxxx",
+		"dateOfflineForClient": 1703996290000, // 到期时间	
+	}
+
+}
+
+```
+
+### 切换ip
+**默认url：http://127.0.0.1:8083/changeip**
+**完整url： http://127.0.0.1:8083/changeip?areas=[你选择的城市id]&lineId=[获取到的lineId]&hostId=[获取都得hostId]**
+>参数说明： 
+>>areas, 城市id，多个中间用逗号分隔，如： 512,352，521
+>>hostId, lineId 切换ip会返回，用于普通版固定ip
+
+```
+返回
+{
+    "code":200            
+    "ipName": "浙江-台州电信",
+    "addr": "183.149.124.17",                              
+	"hostId": 12,	// 普通版固定IP时 请求参数 &hostId=
+	"lineId": 32131, // 普通版固定IP时 请求参数 &lineId=
+    "usageCount": 18,
+    "usingCount": 1,
+}
+	// 其它code
+	405{msg:"切换IP间隔时间需要大于11秒"}
+    412{msg:"账号已过期"}
+    416{msg:"当前授权已满，请稍后再试"}
+    417{msg:"地区或者套餐暂无ip可用，请重试或联系管理员"}
+    500服务器错误
+```
+
+### 释放ip（退出时必须调用，以免连接数被占用）
+**http://127.0.0.1:8083/releaseip**
+```
+返回
+{
+	"code": 200,
+	"msg": "success",
+	"usingCount": 1	// 用量
+}
+```
+
+
+### 停止(用于停止代理走本地，但不退出软件)
+**http://127.0.0.1:8083\stopip**
+```
+返回
+{
+	"code": 200,
+	"msg": "success"	
+}
+```
+
+### 获取所有地区列表
+**http://127.0.0.1:8083/getareas**
+
+```
+返回
+{
+	"code":200,
+	"data":[{
+		"id":22,		// 省份id
+		"isEnable":1,	// 1 可用 ，其它数字不可用
+		"pid": 22,		// 省份ID
+		"pname": "陕西",	// 省份名称
+		"cities":[{
+			"id": 279,	// 城市id
+			"isEnable": 0,	// 1 可用 ，其它数字不可用
+			"lineNum": 12,	// 节点数量
+			"cname": "汉中电信", // 城市名称	
+		}]
+	}]
+}
+
+```
+
+
 ### 以上方式皆需要下载安装sdk的apk包[点击下载](https://android-1302225453.cos.ap-guangzhou.myqcloud.com/wzb/ST%E5%8A%A0%E9%80%9F%E5%99%A8SDK1.4.apk)
 
 ## Android Root版SDK(java接入文档)
