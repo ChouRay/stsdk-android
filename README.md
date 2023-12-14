@@ -61,7 +61,7 @@ adb shell am broadcast -f 0x01000000 -a action.st.releaseip
     500服务器错误
 ```
 
-#### 释放ip（退出时必须调用，以免连接数被占用）
+#### 断开代理并释放ip（退出时必须调用，以免连接数被占用）
 
 >http://127.0.0.1:8083/releaseip
 
@@ -75,7 +75,7 @@ adb shell am broadcast -f 0x01000000 -a action.st.releaseip
 ```
 
 
-#### 停止代理IP(用于停止代理走本地，但不退出软件)
+#### 断开代理IP(用于断开代理走本地，但不退出软件)
 
 > http://127.0.0.1:8083\stopip
 
