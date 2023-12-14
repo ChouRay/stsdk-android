@@ -36,7 +36,7 @@ adb shell am broadcast -f 0x01000000 -a action.st.releaseip
 > 默认url：http://127.0.0.1:8083/changeip
 <br>
 
-> 完整url： http://127.0.0.1:8083/changeip?areas=[你选择的城市id]&lineId=[lineId]&hostId=[hostId]
+> 完整url： http://127.0.0.1:8083/changeip?areas=[你选择的城市id]&lineid=[lineid]&hostid=[hostid]
 
 > 参数说明： <br>
 >> areas, 城市id，多个中间用逗号分隔，如： 512,352,521<br>
