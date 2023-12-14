@@ -36,7 +36,7 @@ adb shell am broadcast -f 0x01000000 -a action.st.releaseip
 > 默认url：http://127.0.0.1:8083/changeip
 <br>
 
-> 完整url： http://127.0.0.1:8083/changeip?areas=[你选择的城市id]&lineid=[lineid]&hostid=[hostid]
+> 完整url： http://127.0.0.1:8083/changeip?areas=[你选择的城市id]&lineid=[lineid]&hostid=[hostid]   (注意参数小写哦)
 
 > 参数说明： <br>
 >> areas, 城市id，多个中间用逗号分隔，如： 512,352,521<br>
@@ -48,8 +48,8 @@ adb shell am broadcast -f 0x01000000 -a action.st.releaseip
     "code":200            
     "ipName": "浙江-台州电信",
     "addr": "183.149.124.17",
-	"hostId": 12,	// 普通版固定IP时 请求参数 &hostId=
-	"lineId": 32131, // 普通版固定IP时 请求参数 &lineId=
+	"hostId": 12,	// 普通版固定IP时 请求参数 &hostid=hostId
+	"lineId": 32131, // 普通版固定IP时 请求参数 &lineid=lineId
     "usageCount": 18,
     "usingCount": 1,
 }
